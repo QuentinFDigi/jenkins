@@ -14,7 +14,9 @@ pipeline {
                             x = 1
                             stages{
                                 stage("inner 1") {
-                                    echo "X est egal a ${x} sur la branche a"
+                                    steps {
+                                        echo "X est egal a ${x} sur la branche a"
+                                    }
                                 }
                             }
                         },
@@ -22,7 +24,9 @@ pipeline {
                             x = 2
                             stages{
                                 stage("inner 1") {
-                                    echo "X est egal a ${x} sur la branche b"
+                                    steps {
+                                        echo "X est egal a ${x} sur la branche b"
+                                    }
                                 }
                             }
                         }
