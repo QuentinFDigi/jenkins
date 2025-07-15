@@ -12,11 +12,19 @@ pipeline {
                     parallel(
                         a: {
                             x = 1
-                            echo "X est egal a ${x} sur la branche a"
+                            stages{
+                                stage("inner 1") {
+                                    echo "X est egal a ${x} sur la branche a"
+                                }
+                            }
                         },
                         b: {
                             x = 2
-                            echo "X est egal a ${x} sur la branche b"
+                            stages{
+                                stage("inner 1") {
+                                    echo "X est egal a ${x} sur la branche b"
+                                }
+                            }
                         }
                     )
                 }
