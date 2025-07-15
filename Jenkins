@@ -7,6 +7,11 @@ pipeline {
         variable = "https://youtube.com"
     }
     stages {
+        stage("build") {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
         stage("etape 1") {
             stages{
                 stage("sous etape 1") {
